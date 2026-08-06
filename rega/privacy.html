@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rega — Privacy Policy / מדיניות פרטיות</title>
+<style>
+  :root { --ink:#1d2b22; --muted:#5b6b61; --line:#dfe7e1; --accent:#2f6b4f; --bg:#fbf9fd; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:0; background:var(--bg); color:var(--ink);
+         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }
+  .wrap { max-width:760px; margin:0 auto; padding:32px 20px 72px; }
+  h1 { font-size:1.9rem; margin:0 0 4px; }
+  h2 { font-size:1.25rem; margin:34px 0 10px; color:var(--accent); }
+  h3 { font-size:1.02rem; margin:20px 0 6px; }
+  .sub { color:var(--muted); margin:0 0 8px; }
+  .updated { color:var(--muted); font-size:.9rem; }
+  hr { border:0; border-top:1px solid var(--line); margin:44px 0; }
+  table { border-collapse:collapse; width:100%; margin:12px 0; font-size:.94rem; }
+  th,td { border:1px solid var(--line); padding:9px 11px; text-align:left; vertical-align:top; }
+  th { background:#eef4f0; }
+  code { background:#eef4f0; padding:1px 5px; border-radius:4px; font-size:.9em; }
+  ul { padding-left:22px; }
+  .he { direction:rtl; text-align:right; }
+  .he ul { padding-left:0; padding-right:22px; }
+  .he th, .he td { text-align:right; }
+  .note { background:#eef4f0; border-left:4px solid var(--accent); padding:12px 14px; margin:14px 0; }
+  .he .note { border-left:0; border-right:4px solid var(--accent); }
+  .langbar { margin:0 0 26px; }
+  .langbar a { color:var(--accent); margin-right:14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar"><a href="#en">English</a><a href="#he">עברית</a></div>
+
+<h1 id="en">Rega — Privacy Policy</h1>
+<p class="sub">Rega is a screen-time companion: it pauses for a moment when you open an app you chose to watch, counts the time, and then offers a genuine choice.</p>
+<p class="updated">Last updated: 6 August 2026</p>
+
+<h2>The short version</h2>
+<ul>
+  <li>Rega records <strong>only the apps you yourself put on your watchlist</strong> — never every app on your phone.</li>
+  <li>The app is <strong>fully functional without an account</strong>. If you never sign in and never turn on the Shabbat setting, Rega makes almost no network requests — see the one exception below.</li>
+  <li>There is <strong>no advertising, no ad SDK, no third-party analytics, and no crash-reporting SDK</strong>. Nothing about you is sold, and nothing is shared for advertising.</li>
+  <li>Rega sends <strong>anonymous, aggregate product statistics</strong> that are not tied to any account. This is part of the app and cannot be switched off — details below.</li>
+</ul>
+
+<h2>What Rega collects, and where it goes</h2>
+<table>
+  <tr><th>What</th><th>Why</th><th>Where it is stored</th></tr>
+  <tr>
+    <td><strong>App activity</strong> — which of <em>your chosen</em> watchlist apps were opened, and for how long, plus how you answered Rega's own prompts.</td>
+    <td>To run the pause, the countdown and the daily/weekly goals. This is the feature itself.</td>
+    <td>On your device, in Rega's own database. Read using Android's <code>PACKAGE_USAGE_STATS</code> permission, which you grant explicitly.</td>
+  </tr>
+  <tr>
+    <td><strong>Account details</strong> — your email address and a user ID.</td>
+    <td>Only if you choose to sign in, so your history can follow you across devices and you can join a circle.</td>
+    <td>Our backend (Supabase). <strong>Optional and never required.</strong></td>
+  </tr>
+  <tr>
+    <td><strong>Session and prompt records</strong>.</td>
+    <td>Cross-device sync, for signed-in adult accounts only.</td>
+    <td>Our backend, in rows only your account can read. Not sent at all if you are not signed in.</td>
+  </tr>
+  <tr>
+    <td><strong>Circle membership and aggregate circle state</strong>.</td>
+    <td>So a family or group can share a goal together. Aggregate figures only — never a per-member ranking.</td>
+    <td>Our backend. Only if you create or join a circle.</td>
+  </tr>
+  <tr>
+    <td><strong>A city identifier</strong> (a public <code>geonameid</code>).</td>
+    <td>To look up candle-lighting times, only if you switch the Shabbat setting on.</td>
+    <td>Sent to hebcal.com. <strong>No coordinates, no location permission, no account, no device identifier</strong> — Rega never requests location access at all.</td>
+  </tr>
+  <tr>
+    <td><strong>Anonymous product statistics</strong> — counters only: days recorded, days under target, days the plant bloomed, total watched minutes, how prompts and suggestions were answered.</td>
+    <td>To tell whether the app actually helps people, rather than guessing.</td>
+    <td>Our backend, keyed by a random identifier created on your device. See the section below.</td>
+  </tr>
+</table>
+
+<h2>About the anonymous statistics</h2>
+<div class="note">
+  <p><strong>These are disclosed, not optional.</strong> They are part of the app and there is no setting that turns them off. We would rather say so plainly than describe a control that does not exist.</p>
+</div>
+<p>What makes them anonymous is structural, not a promise:</p>
+<ul>
+  <li>They are keyed by a <strong>random identifier generated on your device for this purpose alone</strong>. It is not your account, it is never sent alongside your account, and it links to nothing else we hold.</li>
+  <li>They contain <strong>no app names, no timestamps of anything you did, no free text, and no account identifier</strong> — only whole-number counters.</li>
+  <li>The app is <strong>not able to read this data back</strong>. The database permits writing a row and nothing else, so no holder of the app's key — including us, through the app — can retrieve one.</li>
+</ul>
+<p>The set of counters is fixed in the app's own automated checks: adding a new field to this report fails our build, so it cannot quietly grow.</p>
+
+<h2>What Rega never does</h2>
+<ul>
+  <li>It never watches apps you did not put on your watchlist.</li>
+  <li>It never requests location access, reads your contacts, your messages, your photos, or your screen contents.</li>
+  <li>It never blocks an app or locks you out. Every prompt can be dismissed, always.</li>
+  <li>It never reports one family member's activity to another as an individual figure. Shared goals are group totals only, and there are no leaderboards.</li>
+  <li>It contains no advertising and no third-party tracker of any kind.</li>
+</ul>
+
+<h2>Children</h2>
+<p>Rega is built to be kind to younger users, and a child sees the same gentle wording an adult does. This release is not enrolled in Google Play's "Designed for Families" programme and is not directed at children under 13. If a child uses Rega, we recommend a parent sets it up on the device with them.</p>
+
+<h2>Security</h2>
+<p>All network requests use HTTPS. The app declares no exception for unencrypted traffic, so plain HTTP is blocked by Android itself. Android's own automatic backup and device-to-device transfer are switched off for Rega, so your on-device history is not copied into a cloud backup by the operating system.</p>
+
+<h2>Keeping and deleting your data</h2>
+<ul>
+  <li><strong>On your device:</strong> uninstalling Rega deletes its database and settings.</li>
+  <li><strong>If you signed in:</strong> a copy exists on our backend. Write to us using the contact details on Rega's Google Play listing and we will delete your account and its rows.</li>
+  <li><strong>The anonymous statistics</strong> cannot be deleted on request, because there is deliberately nothing linking them to you — no identifier we could search by.</li>
+</ul>
+
+<h2>Changes</h2>
+<p>If what Rega collects changes, this page changes with it and the date at the top is updated.</p>
+
+<h2>Contact</h2>
+<p>Use the developer contact details shown on Rega's Google Play store listing.</p>
+
+<hr>
+
+<div class="he" id="he">
+<h1>Rega — מדיניות פרטיות</h1>
+<p class="sub">‏Rega הוא חבר למסך: עם כל פתיחה של אפליקציה שנבחרה למעקב הוא עוצר לרגע, סופר את הזמן, ובסוף מציע בחירה אמיתית.</p>
+<p class="updated">עודכן לאחרונה: 6 באוגוסט 2026</p>
+
+<h2>בקצרה</h2>
+<ul>
+  <li>‏Rega מתעד <strong>רק את האפליקציות שסומנו לרשימת המעקב</strong> — אף פעם לא את כל מה שיש בטלפון.</li>
+  <li>האפליקציה <strong>עובדת במלואה בלי חשבון</strong>. בלי התחברות ובלי הפעלת הגדרת שבת, כמעט שאין פניות לרשת — למעט החריג שמפורט למטה.</li>
+  <li>אין <strong>פרסומות, אין ערכת פרסום, אין אנליטיקה של צד שלישי ואין דיווח קריסות</strong>. שום מידע אישי לא נמכר ולא משותף לצרכי פרסום.</li>
+  <li>‏Rega שולח <strong>סטטיסטיקה אנונימית ומצטברת</strong> שאינה קשורה לשום חשבון. זה חלק מהאפליקציה ואי אפשר לכבות אותו — הפירוט למטה.</li>
+</ul>
+
+<h2>מה נאסף ולאן זה הולך</h2>
+<table>
+  <tr><th>מה</th><th>למה</th><th>איפה זה נשמר</th></tr>
+  <tr>
+    <td><strong>פעילות באפליקציות</strong> — אילו מהאפליקציות <em>שנבחרו</em> נפתחו, לכמה זמן, ואיך נענו התזכורות של Rega.</td>
+    <td>כדי להפעיל את הרגע, את הספירה ואת היעדים היומיים והשבועיים. זו התכונה עצמה.</td>
+    <td>במכשיר, במסד הנתונים של Rega. נקרא דרך הרשאת <code>PACKAGE_USAGE_STATS</code> של אנדרואיד, שניתנת במפורש.</td>
+  </tr>
+  <tr>
+    <td><strong>פרטי חשבון</strong> — כתובת אימייל ומזהה משתמש.</td>
+    <td>רק במקרה של התחברות, כדי שההיסטוריה תעבור בין מכשירים ותתאפשר הצטרפות למעגל.</td>
+    <td>בשרת שלנו (Supabase). <strong>אופציונלי לגמרי ולעולם לא נדרש.</strong></td>
+  </tr>
+  <tr>
+    <td><strong>רישומי שימוש ותזכורות</strong>.</td>
+    <td>סנכרון בין מכשירים, לחשבונות מבוגרים מחוברים בלבד.</td>
+    <td>בשרת שלנו, בשורות שרק החשבון עצמו יכול לקרוא. בלי התחברות — לא נשלח כלל.</td>
+  </tr>
+  <tr>
+    <td><strong>חברות במעגל ומצב מצטבר של המעגל</strong>.</td>
+    <td>כדי שמשפחה או קבוצה יוכלו לחלוק יעד. נתונים מצטברים בלבד — לעולם לא דירוג לפי חבר.</td>
+    <td>בשרת שלנו. רק במקרה של יצירת מעגל או הצטרפות אליו.</td>
+  </tr>
+  <tr>
+    <td><strong>מזהה עיר</strong> (‎<code>geonameid</code> ציבורי).</td>
+    <td>כדי למשוך זמני הדלקת נרות, רק אם הגדרת שבת מופעלת.</td>
+    <td>נשלח ל־hebcal.com. <strong>בלי קואורדינטות, בלי הרשאת מיקום, בלי חשבון ובלי מזהה מכשיר</strong> — Rega לא מבקש גישה למיקום בכלל.</td>
+  </tr>
+  <tr>
+    <td><strong>סטטיסטיקה אנונימית</strong> — מונים בלבד: ימים שנמדדו, ימים מתחת ליעד, ימים שהצמח פרח, סך דקות במעקב, ואיך נענו תזכורות והצעות.</td>
+    <td>כדי לדעת אם האפליקציה באמת עוזרת, במקום לנחש.</td>
+    <td>בשרת שלנו, לפי מזהה אקראי שנוצר במכשיר. ראו את הפסקה הבאה.</td>
+  </tr>
+</table>
+
+<h2>על הסטטיסטיקה האנונימית</h2>
+<div class="note">
+  <p><strong>זה מוצהר, לא אופציונלי.</strong> זה חלק מהאפליקציה ואין הגדרה שמכבה את זה. עדיף לומר זאת בפירוש מאשר לתאר שליטה שאינה קיימת.</p>
+</div>
+<p>מה שהופך את זה לאנונימי הוא מבני, לא הבטחה:</p>
+<ul>
+  <li>המפתח הוא <strong>מזהה אקראי שנוצר במכשיר למטרה הזו בלבד</strong>. הוא אינו החשבון, לעולם אינו נשלח לצידו, ואינו מתחבר לשום דבר אחר.</li>
+  <li>אין בו <strong>שמות אפליקציות, אין חותמות זמן של פעולות, אין טקסט חופשי ואין מזהה חשבון</strong> — רק מונים שלמים.</li>
+  <li>האפליקציה <strong>אינה מסוגלת לקרוא את הנתונים האלה בחזרה</strong>. מסד הנתונים מתיר כתיבת שורה בלבד, כך שאף מחזיק מפתח של האפליקציה אינו יכול לשלוף שורה.</li>
+</ul>
+<p>אוסף המונים נעול בבדיקות האוטומטיות של האפליקציה: הוספת שדה חדש לדיווח מפילה את הבנייה, כך שהוא אינו יכול לגדול בשקט.</p>
+
+<h2>מה Rega לעולם לא עושה</h2>
+<ul>
+  <li>לעולם לא עוקב אחרי אפליקציות שלא סומנו לרשימת המעקב.</li>
+  <li>לעולם לא מבקש גישה למיקום, לאנשי קשר, להודעות, לתמונות או לתוכן המסך.</li>
+  <li>לעולם לא חוסם אפליקציה ולא נועל. כל תזכורת ניתנת לביטול, תמיד.</li>
+  <li>לעולם לא מדווח על פעילות של בן משפחה אחד לאחר כנתון אישי. יעדים משותפים הם סכום קבוצתי בלבד, ואין טבלאות דירוג.</li>
+  <li>אין בו פרסומות ואין בו שום גשש של צד שלישי.</li>
+</ul>
+
+<h2>ילדים</h2>
+<p>‏Rega נבנה כדי להיות עדין גם למשתמשים צעירים, וילד רואה בדיוק את אותה שפה רכה שמבוגר רואה. הגרסה הזו אינה רשומה לתוכנית "Designed for Families" של Google Play ואינה מכוונת לילדים מתחת לגיל 13. אם ילד משתמש ב־Rega, מומלץ שהורה יגדיר את זה יחד איתו במכשיר.</p>
+
+<h2>אבטחה</h2>
+<p>כל פנייה לרשת היא ב־HTTPS. האפליקציה אינה מצהירה על חריג לתעבורה לא מוצפנת, ולכן HTTP רגיל נחסם על ידי אנדרואיד עצמו. הגיבוי האוטומטי של אנדרואיד וההעברה בין מכשירים מכובים עבור Rega, כך שההיסטוריה במכשיר אינה מועתקת לגיבוי ענן על ידי מערכת ההפעלה.</p>
+
+<h2>שמירה ומחיקה של המידע</h2>
+<ul>
+  <li><strong>במכשיר:</strong> הסרת Rega מוחקת את מסד הנתונים ואת ההגדרות.</li>
+  <li><strong>במקרה של התחברות:</strong> קיים עותק בשרת שלנו. אפשר לפנות אלינו בפרטי הקשר שמופיעים בדף של Rega ב־Google Play, ונמחק את החשבון ואת השורות שלו.</li>
+  <li><strong>את הסטטיסטיקה האנונימית</strong> אי אפשר למחוק לפי בקשה, כי במכוון אין שום דבר שמקשר אותה לאדם מסוים — אין מזהה שאפשר לחפש לפיו.</li>
+</ul>
+
+<h2>שינויים</h2>
+<p>אם מה ש־Rega אוסף משתנה, הדף הזה משתנה איתו והתאריך למעלה מתעדכן.</p>
+
+<h2>יצירת קשר</h2>
+<p>דרך פרטי הקשר של המפתח שמופיעים בדף של Rega ב־Google Play.</p>
+</div>
+
+</div>
+</body>
+</html>
